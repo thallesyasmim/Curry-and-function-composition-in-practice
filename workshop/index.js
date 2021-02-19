@@ -9,3 +9,11 @@ console.log(
     numbers.filter(isEven), // .filter also abstracts the filtering
     numbers.reduce(add, 0) // .reduce runs through an array and accumulates the results
 )
+
+// High order functions - way to abstract a large piece of code and receive an interesting function
+
+const asyncComputation = () => Promise.resolve(1)
+
+asyncComputation()
+    .then(x => x + 15)
+    .then(console.log) // The .then is also a High Order Function. It abstracts the whole part of the Event Loop and the Node.js flow to give us only what is interesting
