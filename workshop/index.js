@@ -17,3 +17,26 @@ const asyncComputation = () => Promise.resolve(1)
 asyncComputation()
     .then(x => x + 15)
     .then(console.log) // The .then is also a High Order Function. It abstracts the whole part of the Event Loop and the Node.js flow to give us only what is interesting
+
+
+// Decorators
+
+const withLog = fn => // Receives function as parameter and returns another function
+    (...args) => {
+        console.log('arguments:', args)
+        const result = fn(...args)
+        console.log('result:', result)
+        return result
+    }
+
+const multi = (x, y) => x * y
+
+const auditMulti = withLog(multi) /* Return at function:  (...args) => {
+                                                console.log('arguments:', args)
+                                                const result = fn(...args)
+                                                console.log('result:', result)
+                                                return result
+                                          } */
+
+
+auditMulti(2, 5)
