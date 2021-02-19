@@ -40,3 +40,5 @@ const auditMulti = withLog(multi) /* Return at function:  (...args) => {
 
 
 auditMulti(2, 5)
+
+// 10:37 
