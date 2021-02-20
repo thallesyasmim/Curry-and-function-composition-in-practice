@@ -40,5 +40,3 @@ const loggedMax = withLog(Math.max) /* Return at function:  (...args) => {
 
 
 loggedMax(456, -1000, 5)
-
-// 10:37 
