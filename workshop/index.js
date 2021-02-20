@@ -31,7 +31,7 @@ const withLog = fn => // Receives function as parameter and returns another func
 
 const multi = (x, y) => x * y
 
-const auditMulti = withLog(multi) /* Return at function:  (...args) => {
+const loggedMax = withLog(Math.max) /* Return at function:  (...args) => {
                                                 console.log('arguments:', args)
                                                 const result = fn(...args)
                                                 console.log('result:', result)
@@ -39,6 +39,6 @@ const auditMulti = withLog(multi) /* Return at function:  (...args) => {
                                           } */
 
 
-auditMulti(2, 5)
+loggedMax(456, -1000, 5)
 
 // 10:37 
